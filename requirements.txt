@@ -6,3 +6,8 @@ jupyterlab==3.4.2
 nb-clean==2.1.0
 pre-commit==2.19.0
 numpy==1.26.4
+plotly
+#requirements for the API
+Flask==2.0.1
+Flask-RESTful==0.3.9
+marshmallow==3.14.1

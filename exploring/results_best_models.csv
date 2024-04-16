@@ -1,0 +1,79 @@
+,name,iteration,best_parameters,MAPE_train,RMSE_train,MAE_train,R2_train,MAPE_test,RMSE_test,MAE_test,R2_test
+0,Linear regression,"No normalization, Negative RMSE as score for best model","{'feature_selection__estimator': LinearRegression(), 'feature_selection__estimator__fit_intercept': False, 'model__fit_intercept': False}",0.3289853336409557,1511.2631182212017,953.0958916672677,0.8536215306510724,0.32420899137920367,1578.0928564115052,978.8254970352671,0.851039631414336
+1,Random Forest,"No normalization, Negative RMSE as score for best model","{'feature_selection__estimator': RandomForestRegressor(), 'feature_selection__estimator__max_depth': None, 'model__max_depth': 5, 'model__n_estimators': 100}",0.20375797002513416,1308.9467608955015,768.5865953942968,0.8901902255197736,0.2183405445046026,1540.5396960169762,874.4283260744412,0.8580447635294154
+2,XGBoost,"No normalization, Negative RMSE as score for best model","{'feature_selection__estimator': XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=None, n_jobs=None,
+             num_parallel_tree=None, random_state=None, ...), 'feature_selection__estimator__max_depth': 9, 'feature_selection__estimator__reg_alpha': 0, 'feature_selection__estimator__reg_lambda': 0.1, 'model__learning_rate': 0.1, 'model__n_estimators': 50}",0.13171410107800702,804.1413597268685,462.87598450668577,0.9585559838759924,0.14980310414017228,1108.6126090783412,593.9081766967773,0.9264868117990303
+3,Linear regression,"No normalization, Negative MAE as score for best model","{'feature_selection__estimator': LinearRegression(), 'feature_selection__estimator__fit_intercept': False, 'model__fit_intercept': True}",0.29253157819561215,1508.5465265949633,922.3053177628784,0.8541473068951211,0.2894675703032601,1568.435688197283,948.014313269235,0.852857184493235
+4,Random Forest,"No normalization, Negative MAE as score for best model","{'feature_selection__estimator': RandomForestRegressor(), 'feature_selection__estimator__max_depth': 5, 'model__max_depth': 5, 'model__n_estimators': 200}",0.20351450899444448,1309.4828024866185,767.7485214620973,0.8901002682186254,0.21815453130862872,1539.5150605230897,873.1923213792502,0.8582335337415115
+5,XGBoost,"No normalization, Negative MAE as score for best model","{'feature_selection__estimator': XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=None, n_jobs=None,
+             num_parallel_tree=None, random_state=None, ...), 'feature_selection__estimator__max_depth': 9, 'feature_selection__estimator__reg_alpha': 0, 'feature_selection__estimator__reg_lambda': 0.1, 'model__learning_rate': 0.1, 'model__n_estimators': 50}",0.13171410107800702,804.1413597268685,462.87598450668577,0.9585559838759924,0.14980310414017228,1108.6126090783412,593.9081766967773,0.9264868117990303
+6,Linear regression,"Standard Normalization, Negative MAE as score for best model","{'feature_selection__estimator': LinearRegression(), 'feature_selection__estimator__fit_intercept': True, 'model__fit_intercept': True}",0.30868029498458355,1512.0844595148267,938.8838549314048,0.853462379871406,0.29841442589742245,1566.2700319622743,952.9706277619283,0.8532632460982964
+7,Random Forest,"Standard Normalization, Negative MAE as score for best model","{'feature_selection__estimator': RandomForestRegressor(), 'feature_selection__estimator__max_depth': 10, 'model__max_depth': 5, 'model__n_estimators': 200}",0.20331237068817853,1310.0928831456172,767.6694350594931,0.889997841032511,0.21797133241440197,1540.685142829248,873.267207091149,0.8580179574544381
+8,XGBoost,"Standard Normalization, Negative MAE as score for best model","{'feature_selection__estimator': XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=None, n_jobs=None,
+             num_parallel_tree=None, random_state=None, ...), 'feature_selection__estimator__max_depth': 9, 'feature_selection__estimator__reg_alpha': 0, 'feature_selection__estimator__reg_lambda': 0.1, 'model__learning_rate': 0.1, 'model__n_estimators': 50}",0.13171410107800702,804.1413597268685,462.87598450668577,0.9585559838759924,0.14980310414017228,1108.6126090783412,593.9081766967773,0.9264868117990303
+9,Linear regression,"Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': LinearRegression(), 'feature_selection__estimator__fit_intercept': True, 'model__fit_intercept': True}",0.9209216193301684,2120.9316287883903,1575.2538908668676,0.7116961968372162,0.9039866057476261,2117.7772719556588,1594.9241670814622,0.7317336522456661
+10,Random Forest,"Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': RandomForestRegressor(), 'feature_selection__estimator__max_depth': 10, 'model__max_depth': 5, 'model__n_estimators': 200}",0.20347996919969336,1308.7929349736387,767.8901305272254,0.8902160334406966,0.2179598691931417,1536.9611429258728,872.8502781925068,0.8587034993426267
+11,XGBoost,"Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=None, n_jobs=None,
+             num_parallel_tree=None, random_state=None, ...), 'feature_selection__estimator__max_depth': 9, 'feature_selection__estimator__reg_alpha': 0, 'feature_selection__estimator__reg_lambda': 0.1, 'model__learning_rate': 0.1, 'model__n_estimators': 50}",0.13171410107800702,804.1413597268685,462.87598450668577,0.9585559838759924,0.14980310414017228,1108.6126090783412,593.9081766967773,0.9264868117990303
+12,Linear regression,"Best features, Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': LinearRegression(), 'feature_selection__estimator__fit_intercept': False, 'model__fit_intercept': True}",0.9209216193301684,2120.9316287883903,1575.2538908668676,0.7116961968372162,0.9039866057476261,2117.7772719556588,1594.9241670814622,0.7317336522456661
+13,Random Forest,"Best features, Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': RandomForestRegressor(), 'feature_selection__estimator__max_depth': 5, 'model__max_depth': 5, 'model__n_estimators': 200}",0.20330824978706652,1308.292289663434,767.526278672659,0.8903000074815278,0.21811630360616535,1537.796018509026,873.5672275640254,0.8585499534470068
+14,XGBoost,"Best features, Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=None, n_jobs=None,
+             num_parallel_tree=None, random_state=None, ...), 'feature_selection__estimator__max_depth': 9, 'feature_selection__estimator__reg_alpha': 0, 'feature_selection__estimator__reg_lambda': 0, 'model__learning_rate': 0.1, 'model__n_estimators': 50}",0.19488127658445734,1181.5873514206917,699.9590577728661,0.9105194384806621,0.21923485499479597,1582.3707243259378,881.1651926269532,0.8502309382139024
+15,Linear regression,"Best features, Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': LinearRegression(), 'feature_selection__estimator__fit_intercept': True, 'model__fit_intercept': True}",0.9473221638852026,2139.984237650244,1592.3353233848243,0.7064931894220052,0.9065587739038156,2136.212270307113,1602.9737823367125,0.7270428713094182
+16,Random Forest,"Best features, Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': RandomForestRegressor(), 'feature_selection__estimator__max_depth': None, 'model__max_depth': 5, 'model__n_estimators': 100}",0.2035327067874285,1308.6905043160432,768.0586846494772,0.8902332169134092,0.21819777823420208,1535.793957665756,872.866289140474,0.8589180221012589
+17,XGBoost,"Best features, Quantile Normalization, Negative MAE as score for best model","{'feature_selection__estimator': XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=None, n_jobs=None,
+             num_parallel_tree=None, random_state=None, ...), 'feature_selection__estimator__max_depth': 1, 'feature_selection__estimator__reg_alpha': 0, 'feature_selection__estimator__reg_lambda': 0, 'model__learning_rate': 0.1, 'model__n_estimators': 50}",0.19488127658445734,1181.5873514206917,699.9590577728661,0.9105194384806621,0.21923485499479597,1582.3707243259378,881.1651926269532,0.8502309382139024
