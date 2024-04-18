@@ -15,11 +15,31 @@ We'll be looking at a bunch of things to see how awesome your work is, like:
 
 ## How to run
 
-Para correr los scripts de este repositorio se debe tener instalado Python en su versión 3.10.10 y Pyenv para manejar environments. [Aquí](https://realpython.com/intro-to-pyenv/) también puede encontrarse una guía sobre la instalación.
+To run the scripts in this repository, you must have Python installed in version 3.10.10 and Pyenv to manage environments. You can also find a guide on installing Pyenv [here](https://realpython.com/intro-to-pyenv/).
 
-Una vez instalado, coloquese en la carpeta de ´xtream-ai-assignment-engineer´.
+Once installed, navigate to the folder with  ´cd xtream-ai-assignment-engineer´.
 
-Si usted está trabajando en Linux, corra el script ["build_env_linux.sh"](build_env_linux.sh) con el siguiente comanto en la terminal: `.\build_env_linux.sh`, el cual se encargará de crear el environment con los requirements necesarios para correr los scripts. De trabajar en Windows, corra el script análogo ["build_env_windows.sh"](build_env_windows.ps1) con el siguiente comanto en la terminal: `.\build_env_windows.ps1`.
+If you are working on Linux, run the script ["build_env_linux.sh"](build_env_linux.sh) with the following command in the terminal: .\build_env_linux.sh, which will create the environment with the necessary requirements to run the scripts.  If you are working on Windows, run the analogous script ["build_env_windows.sh"](build_env_windows.ps1) with the following command in the terminal: .\build_env_windows.ps1.
+
+Note: Since this challenge covered exploratory data analysis, model training, and the creation of training pipelines and REST APIs, the requirements file contains all the necessary libraries for these steps to use a single environment to facilitate running the code without having to activate and deactivate environments for each challenge. However, to better organize the repository inside the company, I would create a separate GitHub folder within the organization solely for research and exploratory model training, another separated for an automated training pipeline so that it could be deployed to cloud services, and a third folder for deployment for inference. This way, each of them would have their own requirements and environment. It would optimize the eventual deploy with less space in the container since it would only install libraries that would use.
+
+In challenge 3, run the API REST with the following command in the terminal: ´python -m src.main´
+
+DESCARGAR THUNDERCLIENT
+
+{
+  "carat": 0.31,
+  "cut": "Premium",
+  "color": "E",
+  "clarity": "VS2",
+  "depth": 61.6,
+  "table": 59.0,
+  "x": 4.35,
+  "y": 4.32,
+  "z": 2.67
+}
+
+I've also made a front-end to use as a demo with a library named streamlit. To run this demo:
 
 ### Diamonds
 
@@ -41,8 +61,7 @@ keeping it as sharp as the diamonds it assesses.
 
 #### Challenge 3
 
-**Assignment**: Build a REST API to integrate your model into a web app,
-making it a cinch for his team to use.
+**Assignment**: Build a REST API to integrate your model into a web app, making it a cinch for his team to use.
 
 
 
