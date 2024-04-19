@@ -77,13 +77,13 @@ The default path to the data considers the folder organization in this repositor
 To run this pipeline, standing on folder `xtream-ai-assignment-engineer`:
 
 ```bash
-python ./training/main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [-model_path MODEL_PATH] [-new_train_split NEW_TRAIN_SPLIT]
+python ./training/main.py [-h] -data_from {csv,storage,bigquery} [-data_path DATA_PATH] [-model_path MODEL_PATH] [-new_train_split NEW_TRAIN_SPLIT]
 
 This is an automated pipeline of training
 
 options:
   -h, --help            show this help message and exit
-  -download {csv,storage,bigquery}
+  -data_from {csv,storage,bigquery}
                         Choose from where to download the data.
   -data_path DATA_PATH  Path to the data when loaded in csv. Default = ./datasets/diamonds/diamonds.csv
   -model_path MODEL_PATH
