@@ -74,21 +74,22 @@ The pipeline includes the steps explained in EDA and training section. Other fea
 
 The default path to the data considers the folder organization in this repository. Also the results of training are saved in a csv.
 
-To run this pipeline:
+To run this pipeline, standing on folder `xtream-ai-assignment-engineer`:
 
 ```bash
-python ./training/main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [--model {XGBoost,Linear,bigquery}] [--model_path MODEL_PATH]
-               [--new_train_split NEW_TRAIN_SPLIT]
+python ./training/main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [-model_path MODEL_PATH] [-new_train_split NEW_TRAIN_SPLIT]
 
+This is an automated pipeline of training
 
+options:
   -h, --help            show this help message and exit
   -download {csv,storage,bigquery}
                         Choose from where to download the data.
-  -data_path DATA_PATH  Path to the data when loaded in csv.
-  --model_path MODEL_PATH
-                        Path to save model
-  --new_train_split NEW_TRAIN_SPLIT
-                        Do the data split train/test.
+  -data_path DATA_PATH  Path to the data when loaded in csv. Default = ./datasets/diamonds/diamonds.csv
+  -model_path MODEL_PATH
+                        Path to save model. Default = ./training/model_files/
+  -new_train_split NEW_TRAIN_SPLIT
+                        Do the data split train/test. Default is True
 ```
 
 #### Challenge 3
