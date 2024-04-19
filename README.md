@@ -23,6 +23,67 @@ If you are working on Linux, run the script ["build_env_linux.sh"](build_env_lin
 
 Note: Since this challenge covered exploratory data analysis, model training, and the creation of training pipelines and REST APIs, the requirements file contains all the necessary libraries for these steps to use a single environment to facilitate running the code without having to activate and deactivate environments for each challenge. However, to better organize the repository inside the company, I would create a separate GitHub folder within the organization solely for research and exploratory model training, another separated for an automated training pipeline so that it could be deployed to cloud services, and a third folder for deployment for inference. This way, each of them would have their own requirements and environment. It would optimize the eventual deploy with less space in the container since it would only install libraries that would use.
 
+
+
+### Diamonds
+
+**Problem type**: Regression
+
+**Dataset description**: [Diamonds Readme](./datasets/diamonds/README.md)
+
+The first step was to perform an exploratory analysis of the Diamonds dataset. This was done in a Jupyter notebook [EDA](./exploring/EDA.ipynb) , which is located within the folder named 'exploring'.
+
+The purpose of the EDA was to understand the dataset's characteristics and its state in order to perform an intermediate cleaning step and use the data for training. The tasks performed included:
+
+* Univariate analysis of categorical and numerical variables
+
+General metrics such as mean, standard deviation, and quantiles for numerical variables were visualized; frequency of categorical values and their most frequent value were visualized too and distributions were plotted using histograms and boxplots.
+Not having a uniform distribution of data characteristics and price would lead to biases in model learning and overfitting models to certain characteristics and values.
+While this occurs, regularization techniques can avoid these issues, and in a second instance, data could be added through an experienced person who tags new data to re-train the model.
+
+* Cleaning of duplicate and correcting erroneous values
+
+Duplicate rows are removed from the dataframe. For negative price values, it was decided to estimate their value based on the price of another diamond with similar characteristics to the diamond with the erroneous value. Another solution would be to also remove them.
+
+* Relationship between categorical variables with Chi2
+
+The Chi2 test is a statistical test whose null hypothesis posits that there is no association between the evaluated variables since the distributions of the frequencies of these variables differ. Since for each association the p-value < 0.05, the null hypothesis was rejected, therefore, there is an association between the variables and they are not independent of each other.
+
+* Encoding of categorical variables for later use in ML models
+
+* Visualization of variables in relation to price (label)
+  
+* Visualization of the correlation of all variables in the dataset with the encoded categorical variables
+
+The variables that show a strong correlation with the price of diamonds are the height (x), width (y), and depth (z). The rest of the variables were not discarded for model training, as they may provide information for a better fit to the data.
+
+* Split the dataset into train and test sub-datasets with a partition of 0.8-0.2
+
+#### Challenge 1
+
+**Assignment**: Create a Jupyter notebook where you develop and evaluate a model that predicts a gem's worth based on its characteristics.
+
+With this analysis, we proceeded to train a couple of models, this step is developed in th following file: [training](./exploring/trainig.ipynb). Although there are many models for tabular data training, three were chosen: Linear Regression Model, RandomForest Model, and XGBoost model.
+
+Linear Regression Model was chosen as it is a basic, simple and easily interpretable model. The other two are well-known performative models for tabular tasks. They also provide feature analysis for it's optimization, they can capture non-linear relationships between label and variables, and also provides regularization techniques to prevent overfitting.
+
+Another solution it would have been to use Autogluon or any librery that performs automated AutoML. But from experience, deploying models with this library in particular can it be expensive in terms of memory since the models requires Autogluon pipelines too. For a simpler and quicker solution, I decided to do an automated grid search with multiple parameters, different evaluation metrics (MSE or MAE) and data normalization/tranformation. This would allow me to get the best model possible. Other variation included for model training was using the best features though feature importance analysis or all variables.
+
+The models' performance was evaluated using a variety of metrics, including mean absolute error (MAE), root mean squared error (RMSE), coefficient of determination (R2), and mean absolute percentage error (MAPE) both for training dataset and testing dataset. The results of different models and metrics were compared to select the model with the best overall performance.
+
+The results of each iteration were saved: [here](./exploring/results_best_models.csv). As analyzed, XGBoost is the best model and also metrics won't vary so much in multiple iterations. So the simplest iteartion was selected as best model given XGBoost has the best performance among the three models with the lowest error metrics and the highest R^2, which means it fits the data well and has good predictive power.
+
+However, since the model isn't improving over the iterations, some possible reasons could be:
+
+* The data: there could be more variations between which variables to choose that the one selected. It could also be the quality of this data, given that distributions for many are not normal.
+* The problem might need more complex models. There are multiple models that can be tried yet: neural netwroks, LightGBM, etc.
+
+#### Challenge 2
+
+**Assignment**: Develop an automated pipeline that trains your model with fresh data.
+
+
+
 python -m training.main -h              
 usage: main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [--model {XGBoost,Linear,bigquery}] [--model_path MODEL_PATH]
                [--new_train_split NEW_TRAIN_SPLIT]
@@ -41,31 +102,13 @@ options:
   --new_train_split NEW_TRAIN_SPLIT
                         Do the data split train/test.
 
-### Diamonds
-
-**Problem type**: Regression
-
-**Dataset description**: [Diamonds Readme](./datasets/diamonds/README.md)
-
-Primer paso: EDA. Por qué? Qué se hizo? Path a la notebook del EDA
-
-#### Challenge 1
-
-Path a la notebook del entrenamiento.
-Qué variaciones se realizaron? Por qué esos modelos? Qué resultados se obtuvieron path a ese archivo. Cuáles son las conclusiones?
-
-#### Challenge 2
-
-**Assignment**: Develop an automated pipeline that trains your model with fresh data,
-keeping it as sharp as the diamonds it assesses.
-
 #### Challenge 3
 
 **Assignment**: Build a REST API to integrate your model into a web app, making it a cinch for his team to use.
 
 In challenge 3, run the API REST with the following command in the terminal: `python -m src.main`.
 
-DESCARGAR THUNDERCLIENT
+After running the code in local, to request the API, I particularly use an extension in Visual Studio Code called: ThunderClient.  So, generate a new request, choose POST method and fill the URL with a dictionary similar to this example:
 
 ```python
 {
@@ -80,6 +123,10 @@ DESCARGAR THUNDERCLIENT
   "z": 2.67
 }
 ```
+
+Hit send and it should provide you a prediction. For better understanding, I provide you a screen capture from the extension used in my VSC:
+
+![alt text](./images/thunderclient.jpeg)
 
 #### Challenge 4
 
