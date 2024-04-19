@@ -77,7 +77,7 @@ The default path to the data considers the folder organization in this repositor
 To run this pipeline:
 
 ```bash
-python -m training.main or python ./training/main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [--model {XGBoost,Linear,bigquery}] [--model_path MODEL_PATH]
+python ./training/main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [--model {XGBoost,Linear,bigquery}] [--model_path MODEL_PATH]
                [--new_train_split NEW_TRAIN_SPLIT]
 
 
