@@ -11,7 +11,7 @@ We'll be looking at a bunch of things to see how awesome your work is, like:
 * The neatness of your code
 * The readability and maintainability of your code
 * The clarity of your documentation
----
+
 
 ## How to run
 
@@ -22,8 +22,6 @@ Once installed, navigate to the folder with  `cd xtream-ai-assignment-engineer`.
 If you are working on Linux, run the script ["build_env_linux.sh"](build_env_linux.sh) with the following command in the terminal: `.\build_env_linux.sh`, which will create the environment with the necessary requirements to run the scripts.  If you are working on Windows, run the analogous script ["build_env_windows.sh"](build_env_windows.ps1) with the following command in the terminal: `.\build_env_windows.ps1`.
 
 Note: Since this challenge covered exploratory data analysis, model training, and the creation of training pipelines and REST APIs, the requirements file contains all the necessary libraries for these steps to use a single environment to facilitate running the code without having to activate and deactivate environments for each challenge. However, to better organize the repository inside the company, I would create a separate GitHub folder within the organization solely for research and exploratory model training, another separated for an automated training pipeline so that it could be deployed to cloud services, and a third folder for deployment for inference. This way, each of them would have their own requirements and environment. It would optimize the eventual deploy with less space in the container since it would only install libraries that would use.
-
-
 
 ### Diamonds
 
@@ -82,25 +80,28 @@ However, since the model isn't improving over the iterations, some possible reas
 
 **Assignment**: Develop an automated pipeline that trains your model with fresh data.
 
+Note: Since I don't own an account of Google Services but that's mainly what I'm used to work with, I developed the functions for data downloading if data were in a bucket in Google Storage or in a table in BigQuery, those lines are commented as they were not tested or ran. This way it can be automatized with other services.
 
+The pipeline includes the steps explained in EDA and training section. Other features in the future I could be add are the fine-tuning of old models with new data, add more models to the pipelines and an automatized deployment to a platform.
 
-python -m training.main -h              
-usage: main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [--model {XGBoost,Linear,bigquery}] [--model_path MODEL_PATH]
+The default path to the data considers the folder organization in this repository. Also the results of training are saved in a csv.
+
+To run this pipeline:
+
+```bash
+python -m training.main or python ./training/main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [--model {XGBoost,Linear,bigquery}] [--model_path MODEL_PATH]
                [--new_train_split NEW_TRAIN_SPLIT]
 
-This is an automated pipeline of training
 
-options:
   -h, --help            show this help message and exit
   -download {csv,storage,bigquery}
                         Choose from where to download the data.
   -data_path DATA_PATH  Path to the data when loaded in csv.
-  --model {XGBoost,Linear,bigquery}
-                        Regression model to use
   --model_path MODEL_PATH
                         Path to save model
   --new_train_split NEW_TRAIN_SPLIT
                         Do the data split train/test.
+```
 
 #### Challenge 3
 

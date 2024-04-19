@@ -190,8 +190,8 @@ def main():
     parser = argparse.ArgumentParser(description='This is an automated pipeline of training')
     parser.add_argument('-download',required=True, type=str,choices=['csv', 'storage', 'bigquery'], help='Choose from where to download the data.')
     parser.add_argument('-data_path',required=False, type=str, help='Path to the data when loaded in csv.', default='./datasets/diamonds/diamonds.csv')
-    parser.add_argument("--model", required=False,
-                        help="Regression model to use",type=str, choices=['XGBoost', 'Linear', 'bigquery'], default="XGBoost")
+    # parser.add_argument("--model", required=False,
+    #                     help="Regression model to use",type=str, choices=['XGBoost', 'Linear', 'bigquery'], default="XGBoost")
     parser.add_argument("--model_path", type=str,required=False,
                         help="Path to save model", default="./training/model_files/")
     parser.add_argument("--new_train_split", type=bool,required=False,
