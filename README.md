@@ -17,29 +17,29 @@ We'll be looking at a bunch of things to see how awesome your work is, like:
 
 To run the scripts in this repository, you must have Python installed in version 3.10.10 and Pyenv to manage environments. You can also find a guide on installing Pyenv [here](https://realpython.com/intro-to-pyenv/).
 
-Once installed, navigate to the folder with  ´cd xtream-ai-assignment-engineer´.
+Once installed, navigate to the folder with  `cd xtream-ai-assignment-engineer`.
 
-If you are working on Linux, run the script ["build_env_linux.sh"](build_env_linux.sh) with the following command in the terminal: .\build_env_linux.sh, which will create the environment with the necessary requirements to run the scripts.  If you are working on Windows, run the analogous script ["build_env_windows.sh"](build_env_windows.ps1) with the following command in the terminal: .\build_env_windows.ps1.
+If you are working on Linux, run the script ["build_env_linux.sh"](build_env_linux.sh) with the following command in the terminal: `.\build_env_linux.sh`, which will create the environment with the necessary requirements to run the scripts.  If you are working on Windows, run the analogous script ["build_env_windows.sh"](build_env_windows.ps1) with the following command in the terminal: `.\build_env_windows.ps1`.
 
 Note: Since this challenge covered exploratory data analysis, model training, and the creation of training pipelines and REST APIs, the requirements file contains all the necessary libraries for these steps to use a single environment to facilitate running the code without having to activate and deactivate environments for each challenge. However, to better organize the repository inside the company, I would create a separate GitHub folder within the organization solely for research and exploratory model training, another separated for an automated training pipeline so that it could be deployed to cloud services, and a third folder for deployment for inference. This way, each of them would have their own requirements and environment. It would optimize the eventual deploy with less space in the container since it would only install libraries that would use.
 
-In challenge 3, run the API REST with the following command in the terminal: ´python -m src.main´
+python -m training.main -h              
+usage: main.py [-h] -download {csv,storage,bigquery} [-data_path DATA_PATH] [--model {XGBoost,Linear,bigquery}] [--model_path MODEL_PATH]
+               [--new_train_split NEW_TRAIN_SPLIT]
 
-DESCARGAR THUNDERCLIENT
+This is an automated pipeline of training
 
-{
-  "carat": 0.31,
-  "cut": "Premium",
-  "color": "E",
-  "clarity": "VS2",
-  "depth": 61.6,
-  "table": 59.0,
-  "x": 4.35,
-  "y": 4.32,
-  "z": 2.67
-}
-
-I've also made a front-end to use as a demo with a library named streamlit. To run this demo:
+options:
+  -h, --help            show this help message and exit
+  -download {csv,storage,bigquery}
+                        Choose from where to download the data.
+  -data_path DATA_PATH  Path to the data when loaded in csv.
+  --model {XGBoost,Linear,bigquery}
+                        Regression model to use
+  --model_path MODEL_PATH
+                        Path to save model
+  --new_train_split NEW_TRAIN_SPLIT
+                        Do the data split train/test.
 
 ### Diamonds
 
@@ -63,7 +63,23 @@ keeping it as sharp as the diamonds it assesses.
 
 **Assignment**: Build a REST API to integrate your model into a web app, making it a cinch for his team to use.
 
+In challenge 3, run the API REST with the following command in the terminal: `python -m src.main`.
 
+DESCARGAR THUNDERCLIENT
+
+```python
+{
+  "carat": 0.31,
+  "cut": "Premium",
+  "color": "E",
+  "clarity": "VS2",
+  "depth": 61.6,
+  "table": 59.0,
+  "x": 4.35,
+  "y": 4.32,
+  "z": 2.67
+}
+```
 
 #### Challenge 4
 
