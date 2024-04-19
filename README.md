@@ -1,18 +1,5 @@
 # xtream AI Challenge
 
-### How We'll Evaluate Your Work
-
-We'll be looking at a bunch of things to see how awesome your work is, like:
-
-* Your approach and method
-* Your understanding of the data
-* The clarity and completeness of your findings
-* How you use your tools (like git and Python packages)
-* The neatness of your code
-* The readability and maintainability of your code
-* The clarity of your documentation
-
-
 ## How to run
 
 To run the scripts in this repository, you must have Python installed in version 3.10.10 and Pyenv to manage environments. You can also find a guide on installing Pyenv [here](https://realpython.com/intro-to-pyenv/).
@@ -23,6 +10,7 @@ If you are working on Linux, run the script ["build_env_linux.sh"](build_env_lin
 
 Note: Since this challenge covered exploratory data analysis, model training, and the creation of training pipelines and REST APIs, the requirements file contains all the necessary libraries for these steps to use a single environment to facilitate running the code without having to activate and deactivate environments for each challenge. However, to better organize the repository inside the company, I would create a separate GitHub folder within the organization solely for research and exploratory model training, another separated for an automated training pipeline so that it could be deployed to cloud services, and a third folder for deployment for inference. This way, each of them would have their own requirements and environment. It would optimize the eventual deploy with less space in the container since it would only install libraries that would use.
 
+## Challenges
 ### Diamonds
 
 **Problem type**: Regression
